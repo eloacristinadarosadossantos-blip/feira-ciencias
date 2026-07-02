@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Avaliação - Feira de Ciências</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        text-align: center;
+        margin: 0;
+    }
+
+    .container {
+        background: white;
+        padding: 25px;
+        margin: 60px auto;
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 90%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #45a049;
+    }
+
+    .resultado {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔬 Feira de Ciências</h1>
+
+    <label>Nome do Grupo:</label>
+    <input type="text" id="grupo" placeholder="Digite o nome">
+
+    <label>Clareza da Apresentação:</label>
+    <select id="clareza">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <label>Organização:</label>
+    <select id="organizacao">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <label>Criatividade:</label>
+    <select id="criatividade">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <label>Domínio do Tema:</label>
+    <select id="dominio">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <button onclick="calcular()">Calcular Nota</button>
+
+    <div class="resultado" id="resultado"></div>
+</div>
+
+<script>
+function calcular() {
+    let grupo = document.getElementById("grupo").value;
+    let clareza = parseInt(document.getElementById("clareza").value);
+    let organizacao = parseInt(document.getElementById("organizacao").value);
+    let criatividade = parseInt(document.getElementById("criatividade").value);
+    let dominio = parseInt(document.getElementById("dominio").value);
+
+    let media = (clareza + organizacao + criatividade + dominio) / 4;
+
+    document.getElementById("resultado").innerHTML =
+        "Grupo: " + grupo + "<br>Nota Final: " + media.toFixed(1);
+}
+</script>
+
+</body>
+</html>
