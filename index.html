@@ -1,130 +1,97 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Avaliação - Feira de Ciências</title>
+<title>Feira de Ciências</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-        text-align: center;
-        margin: 0;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 0;
+}
 
-    .container {
-        background: white;
-        padding: 25px;
-        margin: 60px auto;
-        width: 350px;
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
+.container {
+    background: white;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
 
-    h1 {
-        color: #333;
-    }
+h1 {
+    color: #333;
+}
 
-    label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-    }
+p {
+    color: #666;
+}
 
-    input, select {
-        width: 90%;
-        padding: 8px;
-        margin-top: 5px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
 
-    button {
-        margin-top: 15px;
-        padding: 10px;
-        width: 100%;
-        background: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+button {
+    background: #4facfe;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    button:hover {
-        background: #45a049;
-    }
+button:hover {
+    background: #007bff;
+}
 
-    .resultado {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-    }
+footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #999;
+}
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
-    <h1>🔬 Feira de Ciências</h1>
+    <h1>🔬 Avaliação da Feira de Ciências</h1>
+    <p>Deixe sua opinião sobre o projeto:</p>
 
-    <label>Nome do Grupo:</label>
-    <input type="text" id="grupo" placeholder="Digite o nome">
+    <input type="text" placeholder="Seu nome">
 
-    <label>Clareza da Apresentação:</label>
-    <select id="clareza">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+    <select>
+        <option>Nota</option>
+        <option>⭐ 1 - Ruim</option>
+        <option>⭐⭐ 2 - Regular</option>
+        <option>⭐⭐⭐ 3 - Bom</option>
+        <option>⭐⭐⭐⭐ 4 - Muito bom</option>
+        <option>⭐⭐⭐⭐⭐ 5 - Excelente</option>
     </select>
 
-    <label>Organização:</label>
-    <select id="organizacao">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
+    <textarea placeholder="Seu comentário..." rows="4"></textarea>
 
-    <label>Criatividade:</label>
-    <select id="criatividade">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
+    <button onclick="enviar()">Enviar Avaliação</button>
 
-    <label>Domínio do Tema:</label>
-    <select id="dominio">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-
-    <button onclick="calcular()">Calcular Nota</button>
-
-    <div class="resultado" id="resultado"></div>
+    <footer>Projeto escolar 💡</footer>
 </div>
 
 <script>
-function calcular() {
-    let grupo = document.getElementById("grupo").value;
-    let clareza = parseInt(document.getElementById("clareza").value);
-    let organizacao = parseInt(document.getElementById("organizacao").value);
-    let criatividade = parseInt(document.getElementById("criatividade").value);
-    let dominio = parseInt(document.getElementById("dominio").value);
-
-    let media = (clareza + organizacao + criatividade + dominio) / 4;
-
-    document.getElementById("resultado").innerHTML =
-        "Grupo: " + grupo + "<br>Nota Final: " + media.toFixed(1);
+function enviar() {
+    alert("Avaliação enviada com sucesso! ✅");
 }
 </script>
 
